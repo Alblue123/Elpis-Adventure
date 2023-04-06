@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Elpis1_Adventure" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Elpis1_Adventure" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Elpis1_Adventure" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.hpp" />
+		<Unit filename="GameMap.cpp" />
+		<Unit filename="GameMap.hpp" />
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.hpp" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.hpp" />
+		<Unit filename="Timer.cpp" />
+		<Unit filename="Timer.hpp" />
+		<Unit filename="graphics/background.png" />
+		<Unit filename="graphics/player/jump.png" />
+		<Unit filename="graphics/player/run.png" />
+		<Unit filename="main.cpp" />
+		<Unit filename="map/Terrain/1.png" />
+		<Unit filename="map/Terrain/10.png" />
+		<Unit filename="map/Terrain/11.png" />
+		<Unit filename="map/Terrain/12.png" />
+		<Unit filename="map/Terrain/13.png" />
+		<Unit filename="map/Terrain/14.png" />
+		<Unit filename="map/Terrain/15.png" />
+		<Unit filename="map/Terrain/16.png" />
+		<Unit filename="map/Terrain/17.png" />
+		<Unit filename="map/Terrain/18.png" />
+		<Unit filename="map/Terrain/19.png" />
+		<Unit filename="map/Terrain/2.png" />
+		<Unit filename="map/Terrain/20.png" />
+		<Unit filename="map/Terrain/21.png" />
+		<Unit filename="map/Terrain/22.png" />
+		<Unit filename="map/Terrain/23.png" />
+		<Unit filename="map/Terrain/24.png" />
+		<Unit filename="map/Terrain/25.png" />
+		<Unit filename="map/Terrain/26.png" />
+		<Unit filename="map/Terrain/27.png" />
+		<Unit filename="map/Terrain/28.png" />
+		<Unit filename="map/Terrain/29.png" />
+		<Unit filename="map/Terrain/3.png" />
+		<Unit filename="map/Terrain/30.png" />
+		<Unit filename="map/Terrain/31.png" />
+		<Unit filename="map/Terrain/32.png" />
+		<Unit filename="map/Terrain/33.png" />
+		<Unit filename="map/Terrain/34.png" />
+		<Unit filename="map/Terrain/35.png" />
+		<Unit filename="map/Terrain/36.png" />
+		<Unit filename="map/Terrain/37.png" />
+		<Unit filename="map/Terrain/38.png" />
+		<Unit filename="map/Terrain/39.png" />
+		<Unit filename="map/Terrain/4.png" />
+		<Unit filename="map/Terrain/40.png" />
+		<Unit filename="map/Terrain/41.png" />
+		<Unit filename="map/Terrain/42.png" />
+		<Unit filename="map/Terrain/43.png" />
+		<Unit filename="map/Terrain/44.png" />
+		<Unit filename="map/Terrain/45.png" />
+		<Unit filename="map/Terrain/46.png" />
+		<Unit filename="map/Terrain/47.png" />
+		<Unit filename="map/Terrain/48.png" />
+		<Unit filename="map/Terrain/49.png" />
+		<Unit filename="map/Terrain/5.png" />
+		<Unit filename="map/Terrain/50.png" />
+		<Unit filename="map/Terrain/51.png" />
+		<Unit filename="map/Terrain/52.png" />
+		<Unit filename="map/Terrain/53.png" />
+		<Unit filename="map/Terrain/54.png" />
+		<Unit filename="map/Terrain/6.png" />
+		<Unit filename="map/Terrain/7.png" />
+		<Unit filename="map/Terrain/8.png" />
+		<Unit filename="map/Terrain/9.png" />
+		<Unit filename="map/map1.txt" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
