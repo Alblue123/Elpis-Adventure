@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1680408619 source:c:\users\admin\onedrive\desktop\elpis1_adventure\game.cpp
+1681017802 source:c:\users\admin\onedrive\desktop\elpis1_adventure\game.cpp
 	"Game.hpp"
 
-1680762106 c:\users\admin\onedrive\desktop\elpis1_adventure\game.hpp
+1681022212 c:\users\admin\onedrive\desktop\elpis1_adventure\game.hpp
 	<SDL.h>
 	<windows.h>
 	<cstdio>
@@ -11,17 +11,17 @@
 	<vector>
 	<iostream>
 
-1680763896 source:c:\users\admin\onedrive\desktop\elpis1_adventure\main.cpp
+1681053692 source:c:\users\admin\onedrive\desktop\elpis1_adventure\main.cpp
 	"Game.hpp"
 	"GameObject.hpp"
 	"GameMap.hpp"
 	"Player.hpp"
 	"Timer.hpp"
 
-1680765751 source:c:\users\admin\onedrive\desktop\elpis1_adventure\gameobject.cpp
+1681052436 source:c:\users\admin\onedrive\desktop\elpis1_adventure\gameobject.cpp
 	"GameObject.hpp"
 
-1680472245 c:\users\admin\onedrive\desktop\elpis1_adventure\gameobject.hpp
+1681017086 c:\users\admin\onedrive\desktop\elpis1_adventure\gameobject.hpp
 	"Game.hpp"
 
 1680685981 c:\users\admin\onedrive\desktop\elpis1_adventure\gamemap.hpp
@@ -31,11 +31,13 @@
 1680649676 source:c:\users\admin\onedrive\desktop\elpis1_adventure\gamemap.cpp
 	"GameMap.hpp"
 
-1680765417 c:\users\admin\onedrive\desktop\elpis1_adventure\player.hpp
+1681052370 c:\users\admin\onedrive\desktop\elpis1_adventure\player.hpp
+	<vector>
 	"Game.hpp"
 	"GameObject.hpp"
+	"Shooting.hpp"
 
-1680763896 source:c:\users\admin\onedrive\desktop\elpis1_adventure\player.cpp
+1681053334 source:c:\users\admin\onedrive\desktop\elpis1_adventure\player.cpp
 	"Player.hpp"
 
 1680748893 c:\users\admin\onedrive\desktop\elpis1_adventure\timer.hpp
@@ -43,4 +45,11 @@
 
 1680748905 source:c:\users\admin\onedrive\desktop\elpis1_adventure\timer.cpp
 	"Timer.hpp"
+
+1681021581 c:\users\admin\onedrive\desktop\elpis1_adventure\shooting.hpp
+	"Game.hpp"
+	"GameObject.hpp"
+
+1681053994 source:c:\users\admin\onedrive\desktop\elpis1_adventure\shooting.cpp
+	"Shooting.hpp"
 

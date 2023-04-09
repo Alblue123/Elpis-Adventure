@@ -2,13 +2,13 @@
 
 Player::Player()
 {
-    frame = 1;
+    frame = 0;
     x_val = y_val = 0.0f;
     xpos = ypos = 0.0f;
 
     width_frame = height_frame = 0;
 
-    status = RUN_NONE;
+    //status = RUN_NONE;
 
     flip = SDL_FLIP_NONE;
 
@@ -18,11 +18,13 @@ Player::Player()
     input_type.slide = 0;
 
     on_ground = false;
+    is_slided = false;
 
     map_x = 0;
     map_y = 0;
 
     come_back_time = 0;
+    status = RUN_RIGHT;
 
 }
 
@@ -37,7 +39,7 @@ bool Player::loadIMG(std::string path, SDL_Renderer* renderer)
 
     if (load == true)
     {
-        width_frame = rect.w/7;
+        width_frame = rect.w/8;
         height_frame = rect.h;
     }
     return load;
@@ -47,7 +49,7 @@ void Player::setClips()
 {
     if (width_frame > 0 && height_frame > 0)
     {
-        for (int i = 0; i < 7; ++i)
+        for (int i = 0; i < 8; ++i)
         {
             frame_clip[i].x = i*width_frame;
             frame_clip[i].y = 0;
@@ -68,7 +70,7 @@ void Player::Show(SDL_Renderer* renderer)
     }
      else frame = 0;
 
-    if (frame >= 7) frame = 0;
+    if (frame >= 8) frame = 0;
 
     if (come_back_time == 0)
     {
@@ -101,6 +103,9 @@ void Player::HandleAction(SDL_Event ev, SDL_Renderer* renderer)
             break;
         case SDLK_SPACE:
             input_type.jump = 1;
+        case SDLK_s:
+            input_type.slide = 1;
+            is_slided = true;
             break;
         default:
             break;
@@ -120,8 +125,69 @@ void Player::HandleAction(SDL_Event ev, SDL_Renderer* renderer)
         case SDLK_SPACE:
             input_type.jump = 0;
             break;
+        case SDLK_s:
+            input_type.slide = 0;
+            is_slided = false;
+            break;
         default:
             break;
+        }
+    }
+
+    if (ev.type == SDL_MOUSEBUTTONDOWN)
+    {
+        if (ev.button.button == SDL_BUTTON_LEFT)
+        {
+            Shooting* mBall = new Shooting();
+            mBall->set_magic(Shooting::BLUE_FIRE);
+            mBall->LoadIMG_Magic(renderer);
+            rect.x = xpos - map_x;
+            rect.y = ypos - map_y;
+
+
+            if (status == RUN_RIGHT)
+            {
+                mBall->set_ball_dir(Shooting::SHOOT_RIGHT);
+                mBall->setRect(this->rect.x + width_frame - 10, rect.y + height_frame*0.16);
+            }
+            else if (status == RUN_LEFT)
+
+            {
+                mBall->set_ball_dir(Shooting::SHOOT_LEFT);
+                mBall->setRect(this->rect.x - 20, rect.y + height_frame*0.16);
+            }
+
+            mBall->setXval(8);
+            //mBall->setYval(8);
+            mBall->set_is_move(true);
+
+            ball_list.push_back(mBall);
+        }
+    }
+}
+
+void Player::HandleBall(SDL_Renderer* renderer)
+{
+    int nSize = (ball_list.size());
+    for (int i = 0; i < ball_list.size(); i++)
+    {
+        Shooting* ball = ball_list.at(i);
+        if (ball != NULL)
+        {
+            if (ball->getMove() == true)
+            {
+                ball->HandleMove(SCREEN_WIDTH, SCREEN_HEIGHT);
+                ball->render(renderer);
+            }
+            else
+            {
+                if (ball != NULL)
+                {
+                    ball_list.erase(ball_list.begin()+ i);
+                    delete ball;
+                    ball = NULL;
+                }
+            }
         }
     }
 }
@@ -170,10 +236,10 @@ void Player::DoPlayer(Map &map_data)
             if (xpos > 128)
             {
                 xpos -= 128;
-            } else xpos = 0;
+            }
             ypos = 0;
-            y_val = 0;
-            x_val = 0;
+            y_val = 0.0f;
+            x_val = 0.0f;
         }
     }
 }
@@ -238,7 +304,7 @@ void Player::CheckMap(Map &map_data)
 
                 if (status == RUN_NONE)
                 {
-                    //status = RUN_RIGHT;
+                    status = RUN_RIGHT;
                 }
             }
         }
@@ -298,31 +364,31 @@ void Player::UpdatePlayerImage(SDL_Renderer* renderer)
 {
      if (on_ground == true)
     {
-        loadIMG("graphics//player//run.png", renderer);
-        switch(status)
+        if (is_slided == true)
         {
-        case RUN_LEFT:
-        {
-            flip = SDL_FLIP_HORIZONTAL;
+             loadIMG("graphics//player//slide.png", renderer);
+             PlayerLeftRight();
         }
-        break;
-        case RUN_RIGHT:
-        {
-            if (flip == SDL_FLIP_HORIZONTAL)
-                {
-                    flip = SDL_FLIP_NONE;
-                }
-        }
-        break;
-        default:
-        break;
-        }
+       else
+       {
+
+            loadIMG("graphics//player//run.png", renderer);
+            PlayerLeftRight();
+       }
     }
-    else {
+     else
+    {
+        is_slided = false;
         loadIMG("graphics//player//jump.png", renderer);
-        switch(status)
-        {
-        case RUN_LEFT:
+        PlayerLeftRight();
+    }
+}
+
+void Player::PlayerLeftRight()
+{
+     switch(status)
+     {
+         case RUN_LEFT:
         {
             flip = SDL_FLIP_HORIZONTAL;
         }
@@ -337,6 +403,5 @@ void Player::UpdatePlayerImage(SDL_Renderer* renderer)
         break;
         default:
         break;
-        }
-    }
+     }
 }

@@ -6,7 +6,7 @@ class GameObject
 {
 public:
     GameObject();
-    ~GameObject();
+    virtual ~GameObject();
 
     //setter getter
     void setRect(const int& x, const int&y) {rect.x = x, rect.y = y;}

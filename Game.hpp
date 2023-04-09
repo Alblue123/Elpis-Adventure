@@ -28,7 +28,7 @@ const int COLOR_KEY_B = 171;
 #define BLANK_TILE 0
 #define TILE_SIZE 32
 #define MAX_MAP_X 320
-#define MAX_MAP_Y 19
+#define MAX_MAP_Y 20
 
  struct Input
  {
@@ -49,3 +49,5 @@ const int COLOR_KEY_B = 171;
     int tile[MAX_MAP_Y][MAX_MAP_X];
     std::string file_name;
 };
+
+

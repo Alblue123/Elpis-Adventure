@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     game_map.loadTiles(gRenderer);
 
     Player player;
-    player.loadIMG("graphics//player//run.png", gRenderer);
+    player.loadIMG("graphics//player//run.png",gRenderer);
     player.setClips();
 
 	bool isquit = false;
@@ -39,19 +39,21 @@ int main(int argc, char* argv[])
             }
             player.HandleAction(e, gRenderer);
         }
-         SDL_SetRenderDrawColor(gRenderer, 255, 255, 255, 255);
+         SDL_SetRenderDrawColor(gRenderer, 225, 225, 225, 255);
          SDL_RenderClear(gRenderer);
 
          gBackground.render(gRenderer, NULL);
 
+
          Map map_data = game_map.getMap();
+         game_map.DrawMap(gRenderer);
 
          player.setMapXY(map_data.start_x, map_data.start_y);
          player.DoPlayer(map_data);
          player.Show(gRenderer);
+         player.HandleBall(gRenderer);
 
          game_map.setMap(map_data);
-         game_map.DrawMap(gRenderer);
 
          int real_time = fps_timer.getTicks();
          int time_per_frame = 1000/FPS; //ms
@@ -62,8 +64,7 @@ int main(int argc, char* argv[])
              {
                  SDL_Delay(delay_time);
              }
-         }
-
+        }
          SDL_RenderPresent(gRenderer);
     }
 
@@ -85,7 +86,7 @@ bool init()
         SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" );
 
         //create window
-        gWindow = SDL_CreateWindow("Elpis Adventure", SDL_WINDOWPOS_UNDEFINED,
+       gWindow = SDL_CreateWindow("Elpis Adventure", SDL_WINDOWPOS_UNDEFINED,
                                     SDL_WINDOWPOS_UNDEFINED,
                                     SCREEN_WIDTH,
                                     SCREEN_HEIGHT,
@@ -97,9 +98,10 @@ bool init()
                 }
             else
                 {
-                    gRenderer = SDL_CreateRenderer( gWindow, -1,
-                                                   SDL_RENDERER_ACCELERATED);
-                    if( gRenderer == NULL )
+                    gRenderer = SDL_CreateRenderer(gWindow, -1,
+                                                   SDL_RENDERER_ACCELERATED|
+                                                   SDL_RENDERER_PRESENTVSYNC);
+                    if(gRenderer == NULL )
                     {
                         std::cout<< "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
                         isRunning = false;
@@ -124,7 +126,7 @@ bool init()
 
 bool loadBackground()
 {
-    bool load = gBackground.loadIMG("graphics//background.png", gRenderer);
+    bool load = gBackground.loadIMG("graphics//Background1.png", gRenderer);
     if (load == false) return false;
     return true;
 }

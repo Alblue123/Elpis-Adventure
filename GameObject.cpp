@@ -45,6 +45,12 @@ GameObject::~GameObject()
  void GameObject::render(SDL_Renderer* des, const SDL_Rect* clip)
  {
      SDL_Rect renderquad = {rect.x, rect.y, rect.w, rect.h};
+
+     if (clip != NULL)
+     {
+         renderquad.w = clip->w;
+         renderquad.h = clip->h;
+     }
      SDL_RenderCopy(des, mTexture, clip, &renderquad);
  }
 
