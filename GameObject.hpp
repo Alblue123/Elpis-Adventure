@@ -6,12 +6,12 @@ class GameObject
 {
 public:
     GameObject();
-    virtual ~GameObject();
+    ~GameObject();
 
     //setter getter
-    void setRect(const int& x, const int&y) {rect.x = x, rect.y = y;}
-    SDL_Rect getRect() const {return rect;}
-    SDL_Texture* GetObject() const {return mTexture;}
+    void setRect(const int& x, const int& y) { rect.x = x, rect.y = y; }
+    SDL_Rect getRect() const { return rect; }
+    SDL_Texture* GetObject() const { return mTexture; }
 
     virtual bool loadIMG(std::string path, SDL_Renderer* screen);
     void render(SDL_Renderer* des, const SDL_Rect* clip = NULL);

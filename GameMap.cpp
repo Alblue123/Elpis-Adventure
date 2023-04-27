@@ -16,7 +16,7 @@ void GameMap::loadMap(std::string name)
     {
         for (int x = 0; x < MAX_MAP_X; ++x)
         {
-            fscanf(fp, "%d", &game_map.tile[y][x]);
+            fscanf_s(fp, "%d", &game_map.tile[y][x]);
             int val = game_map.tile[y][x];
             if (val > 0)
             {
@@ -33,8 +33,8 @@ void GameMap::loadMap(std::string name)
     }
 
     //full map
-    game_map.max_x = (game_map.max_x + 1)*TILE_SIZE;
-    game_map.max_y = (game_map.max_y + 1)*TILE_SIZE;
+    game_map.max_x = (game_map.max_x + 1) * TILE_SIZE;
+    game_map.max_y = (game_map.max_y + 1) * TILE_SIZE;
 
     game_map.start_x = 0;
     game_map.start_y = 0;
@@ -75,18 +75,18 @@ void GameMap::DrawMap(SDL_Renderer* renderer)
     int map_y = 0;
 
     //current dimension
-    map_x = game_map.start_x/TILE_SIZE; //tile index
-    x1 = (game_map.start_x%TILE_SIZE)*-1;
-    x2 = x1 + SCREEN_WIDTH + (x1 == 0 ? 0:TILE_SIZE);
+    map_x = game_map.start_x / TILE_SIZE; //tile index
+    x1 = (game_map.start_x % TILE_SIZE) * -1;
+    x2 = x1 + SCREEN_WIDTH + (x1 == 0 ? 0 : TILE_SIZE);
 
-    map_y = game_map.start_y/TILE_SIZE;
-    y1= (game_map.start_y%TILE_SIZE)*-1;
-    y2 = y1 + SCREEN_HEIGHT + (y1 == 0 ? 0:TILE_SIZE);
+    map_y = game_map.start_y / TILE_SIZE;
+    y1 = (game_map.start_y % TILE_SIZE) * -1;
+    y2 = y1 + SCREEN_HEIGHT + (y1 == 0 ? 0 : TILE_SIZE);
 
-    for (int i = y1; i < y2; i+=TILE_SIZE)
+    for (int i = y1; i < y2; i += TILE_SIZE)
     {
-        map_x = game_map.start_x/TILE_SIZE;
-        for (int j = x1; j < x2; j+=TILE_SIZE)
+        map_x = game_map.start_x / TILE_SIZE;
+        for (int j = x1; j < x2; j += TILE_SIZE)
         {
             int val = game_map.tile[map_y][map_x];
             if (val > 0)
