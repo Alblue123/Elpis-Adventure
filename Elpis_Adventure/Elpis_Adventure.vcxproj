@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{2e880ae7-7832-4d48-9372-0bac45b3862b}</ProjectGuid>
+    <RootNamespace>ElpisAdventure</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)LibSdl2\SDL2-2.0.8\include;$(SolutionDir)LibSdl2\SDL2_image-2.0.3\include;$(SolutionDir)LibSdl2\SDL2_mixer-2.0.2\include;$(SolutionDir)LibSdl2\SDL2_ttf-2.0.14\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)LibSdl2\SDL2_ttf-2.0.14\lib\x64;$(SolutionDir)LibSdl2\SDL2_image-2.0.3\lib\x64;$(SolutionDir)LibSdl2\SDL2_mixer-2.0.2\lib\x64;$(SolutionDir)LibSdl2\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBar.cpp" />
+    <ClCompile Include="Shooting.cpp" />
+    <ClCompile Include="Sounds.cpp" />
+    <ClCompile Include="TextObject.cpp" />
+    <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boss.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="Explosion.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="GameMap.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="Geometry.hpp" />
+    <ClInclude Include="Menu.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="PlayerBar.hpp" />
+    <ClInclude Include="Shooting.hpp" />
+    <ClInclude Include="Sounds.hpp" />
+    <ClInclude Include="TextObject.hpp" />
+    <ClInclude Include="Timer.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\bowmode.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\jump.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\run.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\slide.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Spell2\bluefire.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Spell2\waterlaser.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Tileset.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\1.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\10.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\11.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\12.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\13.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\14.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\15.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\16.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\17.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\18.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\19.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\2.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\20.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\21.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\22.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\23.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\24.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\25.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\26.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\27.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\28.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\29.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\3.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\30.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\31.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\32.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\33.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\34.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\35.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\36.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\37.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\38.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\39.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\4.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\40.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\41.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\5.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\6.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\7.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\8.png" />
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\9.png" />
+    <Image Include="graphics\Background1.png" />
+    <Image Include="graphics\Monster\boss_object.png" />
+    <Image Include="graphics\Monster\brain_eater.png" />
+    <Image Include="graphics\Monster\fire_worm.png" />
+    <Image Include="graphics\Monster\golem.png" />
+    <Image Include="graphics\player\player_ani.png" />
+    <Image Include="graphics\reset.png" />
+    <Image Include="graphics\Spell2\explosion.png" />
+    <Image Include="graphics\Spell2\fireball.png" />
+    <Image Include="graphics\Supportive\heart.png" />
+    <Image Include="map\Terrain\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\map.aseprite" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map\map1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="font\dlxfont_.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="audio\Unwelcome_School.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

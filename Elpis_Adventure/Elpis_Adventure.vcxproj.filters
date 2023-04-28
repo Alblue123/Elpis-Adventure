@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\map">
+      <UniqueIdentifier>{d79ce65c-c312-4e9a-89f5-650676bff704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\graphics">
+      <UniqueIdentifier>{1a5c5542-60af-4cdd-8f10-46d9b211b4f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\map\Terrain">
+      <UniqueIdentifier>{eb38e8ad-cc6a-4742-a962-96dc17b33ad9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\graphics\player">
+      <UniqueIdentifier>{93eaee69-2e7b-4a7c-8cef-10f6c2a45a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\graphics\Spell2">
+      <UniqueIdentifier>{379b6e88-c3c1-436f-bff4-412320b3e42d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\graphics\Monster">
+      <UniqueIdentifier>{afb257de-8b90-4bcb-b035-57663bc2899c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\font">
+      <UniqueIdentifier>{9795e57d-54c9-4dda-a934-3cd8ef86b811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\graphics\Supportive">
+      <UniqueIdentifier>{c91047ac-3daf-4f50-80ea-1ba57ed12d2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\audio">
+      <UniqueIdentifier>{d7b78167-a2f5-4660-8838-97df029558c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooting.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBar.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sounds.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Tileset.png">
+      <Filter>Resource Files\graphics</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\1.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\2.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\3.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\4.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\5.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\6.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\7.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\8.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\9.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\10.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\11.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\12.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\13.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\14.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\15.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\16.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\17.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\18.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\19.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\20.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\21.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\22.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\23.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\24.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\25.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\26.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\27.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\28.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\29.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\30.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\31.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\32.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\33.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\34.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\35.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\36.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\37.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\38.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\39.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\40.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\Terrain\41.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\bowmode.png">
+      <Filter>Resource Files\graphics\player</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\jump.png">
+      <Filter>Resource Files\graphics\player</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\run.png">
+      <Filter>Resource Files\graphics\player</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\player\slide.png">
+      <Filter>Resource Files\graphics\player</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Spell2\bluefire.png">
+      <Filter>Resource Files\graphics\Spell2</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\graphics\Spell2\waterlaser.png">
+      <Filter>Resource Files\graphics\Spell2</Filter>
+    </Image>
+    <Image Include="map\Terrain\42.png">
+      <Filter>Resource Files\map\Terrain</Filter>
+    </Image>
+    <Image Include="graphics\Monster\brain_eater.png">
+      <Filter>Resource Files\graphics\Monster</Filter>
+    </Image>
+    <Image Include="graphics\Monster\fire_worm.png">
+      <Filter>Resource Files\graphics\Monster</Filter>
+    </Image>
+    <Image Include="graphics\Spell2\fireball.png">
+      <Filter>Resource Files\graphics\Spell2</Filter>
+    </Image>
+    <Image Include="graphics\Spell2\explosion.png">
+      <Filter>Resource Files\graphics\Spell2</Filter>
+    </Image>
+    <Image Include="graphics\Supportive\heart.png">
+      <Filter>Resource Files\graphics\Supportive</Filter>
+    </Image>
+    <Image Include="graphics\player\player_ani.png">
+      <Filter>Resource Files\graphics\player</Filter>
+    </Image>
+    <Image Include="graphics\Background1.png">
+      <Filter>Resource Files\graphics</Filter>
+    </Image>
+    <Image Include="graphics\Monster\golem.png">
+      <Filter>Resource Files\graphics\Monster</Filter>
+    </Image>
+    <Image Include="graphics\Monster\boss_object.png">
+      <Filter>Resource Files\graphics\Monster</Filter>
+    </Image>
+    <Image Include="graphics\reset.png">
+      <Filter>Resource Files\graphics</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\OneDrive\Desktop\Elpis1_Adventure\map\map.aseprite">
+      <Filter>Resource Files\map</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="font\dlxfont_.ttf">
+      <Filter>Resource Files\font</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="audio\Unwelcome_School.wav">
+      <Filter>Resource Files\audio</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
