@@ -448,8 +448,8 @@ int main(int argc, char** argv)
 
                     // collision between player vs boss
                     bool bCol1 = false;
-                    SDL_Rect bossRect = gBoss.GetRectFrame();
-                    bCol1 = SDLGame::CheckCollision(pRect, bossRect) && (gBoss.GetHealth() > 0);
+                    SDL_Rect bRect = gBoss.GetRectFrame();
+                    bCol1 = SDLGame::CheckCollision(pRect, bRect) && (gBoss.GetHealth() > 0);
 
                     if (bCol1 || bCol)
                     {

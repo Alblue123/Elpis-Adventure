@@ -28,7 +28,6 @@ void PlayerBar::Init(SDL_Renderer* renderer)
 		AddPos(20);
 		AddPos(60);
 		AddPos(100);
-		AddPos(140);
 	}
 }
 void PlayerBar::Show(SDL_Renderer* renderer)
@@ -49,7 +48,7 @@ void PlayerBar::DecreaseHealth()
 
 void PlayerBar::IncreaseHealth() 
 {
-	if (num >= 4) num = 4;
+	if (num >= 3) num = 3;
 	else
 	{
 		num++;

@@ -118,8 +118,7 @@ void Player::HandleAction(SDL_Event ev, SDL_Renderer* renderer)
           
         case SDLK_s:
             input_type.slide = 1;
-            is_slided = true;
-      
+            is_slided = true;   
             break;
         default:
             break;
@@ -254,11 +253,25 @@ void Player::DoPlayer(Map& map_data)
 
         if (input_type.left == 1)
         {
-            x_val -= speed;
+            if (is_slided == true)
+            {
+                x_val -= speed * 1.5;
+            }
+            else
+            {
+                x_val -= speed;
+            }
         }
         else if (input_type.right == 1)
         {
-            x_val += speed;
+            if (is_slided == true)
+            {
+                x_val += speed * 1.5;
+            }
+            else
+            {
+                x_val += speed;
+            }
         }
 
         if (input_type.jump == 1)
