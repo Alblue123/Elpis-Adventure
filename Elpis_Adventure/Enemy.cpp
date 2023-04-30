@@ -21,24 +21,20 @@ Enemy::Enemy()
     input_type.left = 1;
     move_type = STATIC_ENEMY;
 
+    for (int i = 0; i < ENEMY_WALK_FRAME; ++i)
+    {
+        frame_clip[i].x = 0;
+        frame_clip[i].y = 0;
+        frame_clip[i].w = 0;
+        frame_clip[i].h = 0;
+    }
+
     mHealth = 1;
 }
 
 Enemy::~Enemy()
 {
-   /* if (prj_list.size() > 0)
-    {
-        for (int i = 0; i < prj_list.size(); i++)
-        {
-            Shooting* mPrj = prj_list.at(i);
-            if (mPrj != NULL)
-            {
-                delete mPrj;
-                mPrj = NULL;
-            }
-        }
-        prj_list.clear();
-    }*/
+
 }
 
 
@@ -58,7 +54,7 @@ void Enemy::setclips()
 {
     if (width_frame_ > 0 && height_frame_ > 0)
     {
-        for (int i = 0; i < 8; ++i)
+        for (int i = 0; i < ENEMY_WALK_FRAME; ++i)
         {
             frame_clip[i].x = i * width_frame_;
             frame_clip[i].y = 0;
@@ -78,7 +74,7 @@ void Enemy::Show(SDL_Renderer* renderer)
 		rect.y = y_pos - map_y;
 		frame_++;
 
-        if (frame_ >= 8)
+        if (frame_ >= ENEMY_WALK_FRAME)
         {
             frame_ = 0;
         }
@@ -191,8 +187,6 @@ void Enemy::CheckMap(Map& map_data)
                     x_pos -= width_frame_ + 1;
                     animation_b = animation_b - 3;
                     
-                    //x_val = 0.0f;
-                    
                 }
         }
         else if (x_val < 0)
@@ -205,7 +199,6 @@ void Enemy::CheckMap(Map& map_data)
                       && val2 != SPIKE_H && val2 != SPIKE_V && val2 != MANAMANA))
                 {
                     x_pos = (x1 + 1) * TILE_SIZE;
-                    //x_val = 0.0f;
                     animation_a = animation_a + 3;
                 }
         }
@@ -230,7 +223,7 @@ void Enemy::CheckMap(Map& map_data)
                    ||(val2!= BLANK_TILE && val2 != FRUIT && val2 != JUMPY && val2 != HEART && val2 != SPIKE_H && val2 != SPIKE_V))
                 {
                     y_pos = y2 * TILE_SIZE;
-                    y_pos -= height_frame_ + 1;
+                    y_pos -= height_frame_;
                     y_val = 0.0f;
                     
                     on_ground_ = true;
@@ -311,7 +304,7 @@ void Enemy::ShowMove(SDL_Renderer* renderer)
 
 SDL_Rect Enemy::getRectFrame()
 {
-    SDL_Rect rec;
+    SDL_Rect rec = { 0, 0, 0, 0 };
     rec.x = rect.x;
     rec.y = rect.y;
     rec.w = width_frame_/ENEMY_WALK_FRAME;
@@ -320,55 +313,3 @@ SDL_Rect Enemy::getRectFrame()
     return rec;
 }
 
-void Enemy::InitPrj(Shooting* mPrj, SDL_Renderer* renderer)
-{
-    if (mPrj != NULL)
-    {
-        mPrj->set_magic(FIRE_BALL);
-        bool load = mPrj->LoadIMG_Magic(renderer);
-        if (load)
-        {
-            mPrj->set_is_move(true);
-            mPrj->set_ball_dir(Shooting::SHOOT_LEFT);
-            mPrj->setRect(rect.x + 5, rect.y + 5);
-            mPrj->setXval(4);
-
-            prj_list.push_back(mPrj);
-        }
-    }
-}
-
-void Enemy::MakePrj(SDL_Renderer* renderer, const int& x_limit, const int& y_limit)
-{
-    for (int i = 0; i < prj_list.size(); ++i)
-    {
-        Shooting* mPrj = prj_list.at(i);
-        if (mPrj != NULL)
-        {
-            if (mPrj->getMove())
-            {
-                int prjtile_distance = rect.x + width_frame_ - mPrj->getRect().x;
-                if (prjtile_distance < 160 && prjtile_distance > 0)
-                {
-                    mPrj->HandleMove(x_limit, y_limit);
-                    mPrj->render(renderer);
-                }
-                else
-                {
-                    mPrj->set_is_move(false);
-                }
-            }
-            else
-            {
-                mPrj->set_is_move(true);
-                mPrj->setRect(rect.x + 5, rect.y + 5 );
-            }
-        }
-    }
-}
-
-void Enemy::ResetProjectile(Shooting* mPrj)
-{
-    mPrj->setRect(x_pos + 10, y_pos + 5);
-    mPrj->setXval(4);
-}

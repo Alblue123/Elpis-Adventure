@@ -33,10 +33,19 @@ Player::Player()
 
     mana = 100;
 
+    for (int i = 0; i < 8; ++i)
+    {
+        frame_clip[i].x = 0;
+        frame_clip[i].y = 0;
+        frame_clip[i].w = 0;
+        frame_clip[i].h = 0;
+    }
+
     healed = false;
     is_damaged = false;
     player_dead = false;
-    magi_changed == false;
+    magi_changed = false;
+    get_buffed = false;
 }
 
 Player::~Player()
@@ -188,7 +197,7 @@ void Player::HandleAction(SDL_Event ev, SDL_Renderer* renderer)
 
 SDL_Rect Player::getRectFrame()
 {
-    SDL_Rect rect_;
+    SDL_Rect rect_ = { 0, 0, 0, 0 };
     rect_.x = rect.x;
     rect_.y = rect.y;
     rect_.w = width_frame/8;
@@ -253,25 +262,12 @@ void Player::DoPlayer(Map& map_data)
 
         if (input_type.left == 1)
         {
-            if (is_slided == true)
-            {
-                x_val -= speed * 1.5;
-            }
-            else
-            {
                 x_val -= speed;
-            }
+
         }
         else if (input_type.right == 1)
         {
-            if (is_slided == true)
-            {
-                x_val += speed * 1.5;
-            }
-            else
-            {
                 x_val += speed;
-            }
         }
 
         if (input_type.jump == 1)
@@ -517,7 +513,7 @@ void Player::CheckMap(Map& map_data)
                 if (val1 != BLANK_TILE || val2 != BLANK_TILE)
                 {
                     ypos = y2 * TILE_SIZE;
-                    ypos -= height_frame + 1;
+                    ypos -= height_frame;
                     y_val = 0.0f;
                     on_ground = true;
 
@@ -609,7 +605,7 @@ void Player::CheckMap(Map& map_data)
 
 void Player::CenterEntity(Map& map_data)
 {
-    map_data.start_x = xpos - (SCREEN_WIDTH / 2);
+    map_data.start_x = xpos - static_cast<float>((SCREEN_WIDTH / 2));
     if (map_data.start_x < 0)
     {
         map_data.start_x = 0;
@@ -619,7 +615,7 @@ void Player::CenterEntity(Map& map_data)
         map_data.start_x = map_data.max_x - SCREEN_WIDTH;
     }
 
-    map_data.start_y = ypos - (SCREEN_HEIGHT / 2);
+    map_data.start_y = ypos - static_cast<float>((SCREEN_HEIGHT / 2));
     if (map_data.start_y < 0)
     {
         map_data.start_y = 0;

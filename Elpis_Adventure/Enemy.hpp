@@ -36,7 +36,6 @@ public:
 	void set_animation(const int& pos_a, const int& pos_b) { animation_a = pos_a, animation_b = pos_b; }
 	void set_left(const int& leftip) { input_type.left = leftip; }
 	void ShowMove(SDL_Renderer* renderer);
-	void set_prjtile_list(const std::vector<Shooting*>& pj_list) { prj_list = pj_list; }
 
 	void setclips();
 
@@ -46,7 +45,6 @@ public:
 	float get_posy() const { return y_pos; }
 	int get_width() const { return width_frame_; }
 	int get_height() const { return height_frame_; }
-	std::vector<Shooting*> get_prjtile_list() const { return prj_list; }
 	SDL_Rect getRectFrame();
 	
 
@@ -58,10 +56,6 @@ public:
 
 	void InitEnemy();
 
-	void InitPrj(Shooting* mPrj, SDL_Renderer* renderer);
-	void MakePrj(SDL_Renderer* renderer, const int& x_limit, const int& y_limit);
-	void ResetProjectile(Shooting* mPrj);
-
 	void set_health(const int& health_) { mHealth = health_; }
 	int get_health() const { return mHealth; }
 	void DecreaseHealth() { mHealth--; };
@@ -69,7 +63,6 @@ public:
 
 
 private:
-	std::vector<Shooting*> prj_list;
 
 	int map_x, map_y;
 
@@ -94,8 +87,5 @@ private:
 	int animation_b;
 
 	int mHealth;
-
-	int mTypes;
-
 
 };

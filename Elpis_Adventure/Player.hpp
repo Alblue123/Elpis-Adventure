@@ -54,9 +54,11 @@ public:
     void set_check_death(const bool& death_) { player_dead = death_; }
     void set_mana(const int& mana_) { mana = mana_; }
     void set_magic(const int& magic_index_) { magic_index = magic_index_; }
-    void set_x_pos(const float& x_pos) { xpos = x_pos; }
+    void set_speed(const int& spd) { speed = spd; }
+    void set_x_val(const float& xval) { x_val = xval; }
     void set_y_pos(const float& y_pos) { xpos = y_pos; }
     void set_magi_change(const bool& magi_) { magi_changed = magi_; }
+    void set_buff(const bool& bff) { get_buffed = bff; }
 
 
     int GetStatus() const { return status; }
@@ -71,7 +73,7 @@ public:
     int get_magic() const { return magic_index; }
     int get_mana() const { return mana; }
     bool get_magi_change() const { return magi_changed; }
-    
+    bool get_buff() const { return get_buffed; }
     
 
 private:
@@ -117,4 +119,5 @@ private:
     bool player_dead;
     
     bool magi_changed;
+    bool get_buffed;
 };

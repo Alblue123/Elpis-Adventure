@@ -218,7 +218,7 @@ int Menu::ShowResetMenu(SDL_Renderer* renderer, TTF_Font* font)
             {
                 xm = m_event.button.x;
                 ym = m_event.button.y;
-                for (int i = 0; i < kMenuItemNum-1; i++) {
+                for (int i = 0; i < kMenuItemNum; i++) {
                     if (CheckFousWithRect(xm, ym, pos_arr[i])) {
                         return i;
                     }

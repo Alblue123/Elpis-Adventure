@@ -17,13 +17,13 @@ class Boss : public GameObject
 public:
     Boss();
     ~Boss();
-    void set_x_val(int xp) { x_val_ = xp; }
-    void set_y_val(int yp) { y_val_ = yp; }
+    void set_x_val(float xv) { x_val_ = xv; }
+    void set_y_val(float yv) { y_val_ = yv; }
 
-    void set_xpos(const int& xps) { x_pos_ = xps; }
-    void set_ypos(const int& yps) { y_pos_ = yps; }
-    int get_x_pos() { return x_pos_; }
-    int get_y_pos() { return y_pos_; }
+    void set_xpos(const float& xps) { x_pos_ = xps; }
+    void set_ypos(const float& yps) { y_pos_ = yps; }
+    float get_x_pos() { return x_pos_; }
+    float get_y_pos() { return y_pos_; }
 
     void Show(SDL_Renderer* des);
     bool loadIMG(std::string path, SDL_Renderer* renderer);
@@ -64,8 +64,8 @@ private:
     int frame_;
     SDL_Rect frame_clip_[FRAME_NUM];
 
-    int x_pos_;
-    int y_pos_;
+    float x_pos_;
+    float y_pos_;
     float x_val_;
     float y_val_;
 

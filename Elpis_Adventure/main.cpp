@@ -28,6 +28,7 @@ enum GameState
     MainMenu = 0,
     InGame = 1,
     ResetMenu = 2,
+    QuitGame = 3,
 };
 
 int main(int argc, char** argv)
@@ -100,6 +101,7 @@ int main(int argc, char** argv)
     // handle time after boss die
     int timeAfterBoss = 10;
 
+    //game state para
     bool isquit = false;
     GameState game_state = MainMenu;
 
@@ -112,7 +114,7 @@ int main(int argc, char** argv)
                 int ret_menu = gMenu.ShowMenu(gRenderer, mFont);
                 if (ret_menu == 1)
                 {
-                    isquit = true;
+                    game_state = QuitGame;
                 }
                 else
                 {
@@ -179,36 +181,17 @@ int main(int argc, char** argv)
                         mEnemy->ShowMove(gRenderer);
                         mEnemy->DoEnemy(map_data);
                         mEnemy->Show(gRenderer);
-                        //mEnemy->MakePrj(gRenderer, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-
-                        //collision between player and monsters' magic
-                        SDL_Rect pRect = player.getRectFrame();
-                        bool mCol1 = false;
-                        /*std::vector<Shooting*> eMagic_storage = mEnemy->get_prjtile_list();
-                        for (int j = 0; j < eMagic_storage.size(); ++j)
-                        {
-                            Shooting* mPrjt = eMagic_storage.at(j);
-                            if (mPrjt)
-                            {
-                                mCol1 = SDLGame::CheckCollision(mPrjt->getRect(), pRect);
-                                if (mCol1 == true)
-                                {
-                                    mEnemy->ResetProjectile(mPrjt);
-                                    break;
-                                }
-                            }
-                        }*/
-
+                        
                         //collision between player & monster
+                        SDL_Rect pRect = player.getRectFrame();
                         SDL_Rect eRect = mEnemy->getRectFrame();
                         bool mCol2 = SDLGame::CheckCollision(pRect, eRect);
 
 
-                        if (mCol1 || mCol2)
+                        if (mCol2)
                         {
                             num_die++;
-                            if (num_die <= 3)
+                            if (num_die < 4)
                             {
                                 player.setRect(0, 0);
                                 player.set_come_back_time(60);
@@ -230,14 +213,14 @@ int main(int argc, char** argv)
                 if (player.get_damaged())
                 {
                     num_die++;
-                    if (num_die <= 3)
+                    player.set_damaged_status(false);
+                    if (num_die < 4)
                     {
                         player.setRect(0, 0);
                         player.set_come_back_time(60);
                         SDL_Delay(200);
 
                         player_bar.DecreaseHealth();
-                        player.set_damaged_status(false);
                         player_bar.render(gRenderer);
                     }
                     else
@@ -248,13 +231,12 @@ int main(int argc, char** argv)
                 //healing
                 if (player.get_healed())
                 {
-                    if (num_die <= 3 && num_die > 0)
+                    player.set_healing_status(false);
+                    if (num_die < 4 && num_die > 0)
                     {
                         num_die--;
-
                         player_bar.IncreaseHealth();
                         player_bar.render(gRenderer);
-                        player.set_healing_status(false);
                     }
                 }
 
@@ -275,7 +257,7 @@ int main(int argc, char** argv)
                                 Enemy* mEnemy = enemy_list.at(j);
                                 if (mEnemy != NULL)
                                 {
-                                    SDL_Rect eRect;
+                                    SDL_Rect eRect = { 0, 0, 0, 0 };
                                     eRect.x = mEnemy->getRect().x;
                                     eRect.y = mEnemy->getRect().y;
                                     eRect.w = mEnemy->get_width();
@@ -408,6 +390,7 @@ int main(int argc, char** argv)
                 game_score.loadFromRenderedText(gFont, gRenderer);
                 game_score.RenderText(gRenderer, SCREEN_WIDTH - 450, 15);
 
+                //Show mana
                 int mana = player.get_mana();
                 std::string mana_value = std::to_string(mana);
                 std::string mn_scr = "Mana: ";
@@ -416,6 +399,18 @@ int main(int argc, char** argv)
                 player_mana.loadFromRenderedText(gFont, gRenderer);
                 player_mana.RenderText(gRenderer, SCREEN_WIDTH * 0.5 - 250, 15);
 
+
+                //secret buff
+                if ((score + mark >= 30) && (player.get_buff() == false))
+                {
+                    player.set_mana(100);
+                    if (player.get_magic() == BLUE_FIRE)
+                    {
+                        player.set_magic(WATER_LASER);
+                    }
+                    player.set_buff(true);
+
+                }
 
                 //Show Boss
                 int val = MAX_MAP_X * TILE_SIZE - (map_data.start_x + player.getRect().x);
@@ -430,9 +425,9 @@ int main(int argc, char** argv)
                     bool bCol = false;
                     SDL_Rect pRect = player.getRectFrame();
                     std::vector<Shooting*> bossBullet = gBoss.get_bullet_list();
-                    for (int bo = 0; bo < bossBullet.size(); ++bo)
+                    for (int bb = 0; bb < bossBullet.size(); ++bb)
                     {
-                        Shooting* bossbul = bossBullet[bo];
+                        Shooting* bossbul = bossBullet[bb];
                         if (bossbul != NULL)
                         {
                             SDL_Rect bRect = bossbul->getRect();
@@ -454,7 +449,7 @@ int main(int argc, char** argv)
                     if (bCol1 || bCol)
                     {
                         num_die++;
-                        if (num_die <= 3)
+                        if (num_die < 4)
                         {
                             player.setRect(0, 0);
                             player.set_come_back_time(60);
@@ -485,7 +480,7 @@ int main(int argc, char** argv)
                 }
             }
             break;
-            case ResetMenu:
+        case ResetMenu:
             {
                 SDL_Delay(1000);
                 Mix_HaltMusic();
@@ -493,7 +488,7 @@ int main(int argc, char** argv)
                 int res_menu = rMenu.ShowResetMenu(gRenderer, mFont);
                 if (res_menu == 1)
                 {
-                    isquit = true;
+                    game_state = QuitGame;
                 }
                 else
                 {
@@ -517,8 +512,9 @@ int main(int argc, char** argv)
 
                     player_bar.Init(gRenderer);
 
-                    player.set_x_pos(0);
                     player.set_y_pos(0);
+                    player.set_x_val(0);
+                    player.set_come_back_time(10);
 
                     player.set_magic(BLUE_FIRE);
                     player.set_mana(100);
@@ -545,13 +541,19 @@ int main(int argc, char** argv)
                     Uint32 time_val = game_start.getTicks() / 1000;
                     Uint32 val_time = 180 - time_val;
 
+                    fps_timer.stop();
+
                     //Sounds
                     beat.addSound("audio//Unwelcome_School.wav");
                     beat.playSound();
                     game_state = InGame;
                 }
-                break;
             }
+
+            break;
+        case QuitGame:
+            isquit = true;
+            break;
         }
         
     }
@@ -676,8 +678,8 @@ std::vector<Enemy*> Gene_Enemy()
             mEnemy->set_health(3);
             
 
-            int pos1 = mEnemy->get_posx() - 60;
-            int pos2 = mEnemy->get_posx() + 60;
+            int pos1 = mEnemy->get_posx() - 50;
+            int pos2 = mEnemy->get_posx() + 50;
             mEnemy->set_animation(pos1, pos2);
 
             enemy_list.push_back(mEnemy);
