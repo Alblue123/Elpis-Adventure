@@ -4,7 +4,7 @@ Trong Elpis Adventure, bạn sẽ hóa thân thành Elpis và tiêu diệt quái
 <br/>Cách chơi: <br/>
 <br/>Dùng các phím A và D để di chuyển, nhấn Space để nhảy và nhấn S để trượt. Dùng chuột để bắn đạn. Mục tiêu của bạn là đánh
 bại boss trong thời gian quy định. <br/>
-<br/>Link demo gameplay: <br/>
+<br/>Link demo gameplay: https://youtu.be/G9gM9313xOQ<br/>
 <br/>Link tài liệu tham khảo:<br/>
 https://phattrienphanmem123az.com/
 <br/>https://lazyfoo.net/tutorials/SDL/index.php<br/>
