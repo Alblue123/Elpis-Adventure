@@ -1,4 +1,5 @@
 # Elpis-Adventure
+<br/> Lam Hoang Hai 22028057 <br/>
 <br/>Elpis là một dũng sỹ với nhiệm vụ tiêu diệt vua Quỷ và giải cứu thế giới. 
 Trong Elpis Adventure, bạn sẽ hóa thân thành Elpis và tiêu diệt quái vật trong  thời gian 3 phút. <br/>
 <br/>Cách chơi: <br/>
