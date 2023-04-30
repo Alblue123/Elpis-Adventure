@@ -61,13 +61,6 @@ void Shooting::HandleMove(const int& x_bor, const int& y_bor)
         {
             Move = false;
         }
-
-      
-       /* rect.y += y_val;
-        if (rect.y > y_bor)
-        {
-            Move = false;
-        }*/
     }
     /*else if (ball_dir == SHOOT_UP)
     {

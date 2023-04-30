@@ -1,13 +1,18 @@
-﻿  main.cpp
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(73,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(74,24): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(300,54): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(301,54): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(342,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(343,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(422,70): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(556,34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(557,40): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(709,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(710,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  GameObject.cpp
+  PlayerBar.cpp
+  Shooting.cpp
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\Shooting.cpp(59,22): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(72,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(73,24): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(284,54): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(285,54): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(326,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(327,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(400,70): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(532,34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(533,40): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(681,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Elpis_Adventure\Elpis_Adventure\main.cpp(682,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   Elpis_Adventure.vcxproj -> C:\Users\Admin\source\repos\Elpis_Adventure\x64\Debug\Elpis_Adventure.exe

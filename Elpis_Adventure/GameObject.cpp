@@ -3,10 +3,7 @@
 GameObject::GameObject()
 {
     mTexture = NULL;
-    rect.x = 0;
-    rect.y = 0;
-    rect.w = 0;
-    rect.h = 0;
+    rect = { 0, 0, 0 , 0 };
 }
 
 GameObject::~GameObject()
@@ -15,7 +12,7 @@ GameObject::~GameObject()
 }
 bool GameObject::loadIMG(std::string path, SDL_Renderer* screen)
 {
-    free();
+    free(); //free pre-existed objects
 
     SDL_Texture* newTexture = NULL;
 

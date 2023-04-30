@@ -2,7 +2,7 @@
 
 PlayerBar::PlayerBar()
 {
-	num = 4;
+	num = 4; //counter
 }
 
 PlayerBar::~PlayerBar()
